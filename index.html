@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Zemma ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GSAP Animation Library -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- FIREWORKS BACKGROUND -->
+    <canvas id="fireworks"></canvas>
+
+    <main id="app">
+
+        <!-- SCREEN 1: CINEMATIC OPENING -->
+        <section class="screen active cinematic" id="welcome">
+
+            <div class="ambient-glow"></div>
+            <div class="stars-layer"></div>
+
+            <p class="eyebrow">
+                A SPECIAL LITTLE UNIVERSE
+            </p>
+
+            <div class="hero-content">
+
+                <p class="intro-text">
+                    Somewhere in this universe...
+                </p>
+
+                <h1 class="hero-title">
+                    Someone<br>
+                    <span>extraordinary</span><br>
+                    was born.
+                </h1>
+
+                <p class="hero-description">
+                    And tonight, the stars are celebrating her.
+                </p>
+
+            </div>
+
+            <!-- ANIMATED GIFT -->
+            <div class="gift-container" id="gift">
+
+                <div class="gift-glow"></div>
+
+                <div class="gift-box">
+
+                    <div class="gift-lid">
+                        <div class="gift-ribbon"></div>
+                    </div>
+
+                    <div class="gift-base">
+                        <div class="gift-ribbon"></div>
+                    </div>
+
+                </div>
+
+                <div class="gift-bow">🎀</div>
+
+            </div>
+
+            <!-- OPEN GIFT BUTTON -->
+            <button class="magic-button" onclick="openSurprise()">
+                <span>Enter your universe</span>
+                <span>✦</span>
+            </button>
+
+            <p class="bottom-note">
+                A little magic, made just for Zemma ♡
+            </p>
+
+        </section>
+
+
+        <!-- SCREEN 2: CINEMATIC BIRTHDAY REVEAL -->
+        <section class="screen birthday-scene" id="birthday">
+
+            <div class="reveal-overlay">
+
+                <p class="small-heading">
+                    TODAY IS YOUR DAY
+                </p>
+
+                <!-- COUNTDOWN -->
+                <div id="countdown" class="countdown">
+                    3
+                </div>
+
+                <!-- BIRTHDAY TITLE -->
+                <h1 class="birthday-title" id="birthdayTitle">
+                    Happy Birthday,<br>
+                    <span>Arifa!</span> 🎂
+                </h1>
+
+                <p class="subtitle" id="birthdaySub">
+                    To the most amazing person...
+                </p>
+
+                <!-- BALLOONS -->
+                <div class="balloons" id="birthdayBalloons">
+                    🎈 💗 🎈
+                </div>
+
+                <!-- CELEBRATION BUTTON -->
+                <button id="celebrateButton" onclick="nextScreen('cake')">
+                    Let's Celebrate 🎉
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCREEN 3: INTERACTIVE CAKE -->
+        <section class="screen" id="cake">
+
+            <p class="small-heading">
+                YOUR BIRTHDAY MOMENT
+            </p>
+
+            <h1>
+                Make a Wish... <span>♡</span>
+            </h1>
+
+            <p class="subtitle">
+                Close your eyes and think of something special.
+            </p>
+
+            <!-- CSS CAKE -->
+            <div class="cake-scene">
+
+                <div class="real-cake" id="realCake">
+
+                    <!-- CANDLES -->
+                    <div class="candles">
+
+                        <div class="candle">
+                            <div class="flame"></div>
+                        </div>
+
+                        <div class="candle">
+                            <div class="flame"></div>
+                        </div>
+
+                        <div class="candle">
+                            <div class="flame"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- CAKE -->
+                    <div class="cake-top"></div>
+
+                    <div class="cake-body">
+
+                        <div class="icing"></div>
+
+                        <div class="strawberry">🍓</div>
+
+                        <div class="strawberry second">🍓</div>
+
+                    </div>
+
+                    <div class="cake-plate"></div>
+
+                </div>
+
+            </div>
+
+            <!-- CAKE INTERACTIONS -->
+            <button id="candleButton" onclick="blowCandles()">
+                Blow the Candles 🕯️
+            </button>
+
+            <button id="cutButton" onclick="cutCake()" hidden>
+                Cut the Cake 🍰
+            </button>
+
+            <p id="cakeMessage"></p>
+
+        </section>
+
+
+        <!-- SCREEN 4: BIRTHDAY LETTER -->
+       
+<!-- SCREEN 4: ANIMATED BIRTHDAY LETTER -->
+<section class="screen letter-screen" id="letter">
+
+    <p class="small-heading">
+        SOMETHING FROM MY HEART
+    </p>
+
+    <h1 class="letter-heading">
+        A Little Letter<br>
+        <span>for You</span>
+    </h1>
+
+    <!-- ENVELOPE -->
+    <div class="letter-experience">
+
+        <div class="love-envelope" id="loveEnvelope">
+
+            <div class="envelope-back"></div>
+
+            <div class="envelope-paper" id="envelopePaper">
+
+                <div class="paper-content">
+
+                    <div class="paper-heart">♡</div>
+
+                    <h2>Dear Zemma,</h2>
+
+                    <p id="typedLetter"></p>
+
+                    <div class="paper-signature">
+                        Always smile,<br>
+                        <span>Someone who cares ❤️</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="envelope-front"></div>
+
+            <div class="envelope-flap" id="envelopeFlap"></div>
+
+            <div class="envelope-seal" id="envelopeSeal">
+                ♥
+            </div>
+
+        </div>
+
+    </div>
+
+    <p class="envelope-hint" id="envelopeHint">
+        A little something, written just for you...
+    </p>
+
+    <button id="openLetterButton" onclick="openLetter()">
+        Open Your Letter 💌
+    </button>
+
+    <button id="letterContinueButton"
+            onclick="nextScreen('finale')"
+            hidden>
+        One Last Surprise 🎆
+    </button>
+
+</section>
+
+
+
+        <!-- SCREEN 5: GRAND FINALE -->
+        <section class="screen" id="finale">
+
+            <p class="small-heading">
+                A WISH JUST FOR YOU
+            </p>
+
+            <h1 class="final-title">
+                Today is all<br>
+                about <span>You ♡</span>
+            </h1>
+
+            <p class="subtitle">
+                Happy Birthday, Zemma!
+            </p>
+
+            <div class="final-heart">
+                💖
+            </div>
+
+            <p class="final-message">
+                May your world always be as beautiful
+                as the happiness you bring to others.
+            </p>
+
+            <button onclick="celebrateAgain()">
+                More Fireworks 🎆
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
